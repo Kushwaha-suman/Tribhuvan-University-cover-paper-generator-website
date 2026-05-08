@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Professional Cover Page Generator</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Free TU Cover Page Generator for Tribhuvan University students. Create professional assignment cover pages and download PDF instantly.">
+
+  <meta name="keywords" content="TU cover page generator, Tribhuvan University cover page, TU assignment cover page, CSIT cover page format, Nepal cover page generator, project report cover page, college cover page maker, BSc CSIT cover page, TU report front page">
+
+  <meta name="author" content="Suman Kushwaha">
+
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TU Cover Page Generator">
+  <meta property="og:description" content="Create TU assignment cover pages easily and download as PDF.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kushwahasuman.com.np/">
+  <meta property="og:image" content="https://kushwahasuman.com.np/preview.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TU Cover Page Generator">
+  <meta name="twitter:description" content="Free TU assignment cover page generator tool.">
+  <meta name="twitter:image" content="https://kushwahasuman.com.np/preview.png">
+
+  <!-- SEO END -->
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- FORM -->
+  <div class="form-box">
+
+    <h2>Cover Page Settings</h2>
+
+    <div class="input-group">
+      <label>University Name</label>
+      <input type="text" id="universityName" value="Tribhuvan University">
+    </div>
+
+    <div class="input-group">
+      <label>College Name</label>
+      <input type="text" id="collegeName" value="Ramsagar Ramswarup Multiple Campus">
+    </div>
+
+    <div class="input-group">
+      <label>College Address</label>
+      <input type="text" id="collegeAddress" value="Janakpur -14, Dhanusha, Nepal">
+    </div>
+
+    <div class="input-group">
+      <label>Faculty</label>
+      <input type="text" id="faculty" value="BSc.CSIT">
+    </div>
+
+    <div class="input-group">
+      <label>Department</label>
+      <input type="text" id="department" value="Department of TUIOST">
+    </div>
+
+    <div class="input-group">
+      <label>Specific Department</label>
+      <textarea id="specificDepartment">Computer Science and Information Technology (BSc.CSIT)</textarea>
+    </div>
+
+    <div class="input-group">
+      <label>Semester</label>
+      <input type="text" id="semester" value="3rd Semester">
+    </div>
+
+    <div class="input-group">
+      <label>Subject</label>
+      <input type="text" id="subject" value="Numerical Method">
+    </div>
+
+    <div class="input-group">
+      <label>Student Name</label>
+      <input type="text" id="studentName" value="Suman Kushwaha">
+    </div>
+
+    <div class="input-group">
+      <label>Roll Number</label>
+      <input type="text" id="rollNumber" value="81011622">
+    </div>
+
+    <div class="input-group">
+      <label>Registration Number</label>
+      <input type="text" id="registrationNumber" value="5-2-14-2705-2024">
+    </div>
+
+    <div class="input-group">
+      <label>Teacher Name</label>
+      <input type="text" id="teacherName" value="Suman Kushwaha">
+    </div>
+
+    <div class="input-group">
+      <label>Submitted To</label>
+      <input type="text" id="submittedTo" value="Ramsagar Ramswarup Multiple Campus">
+    </div>
+
+    <div class="input-group">
+      <label>Campus Location</label>
+      <input type="text" id="campusLocation" value="Campus Chowk, Janakpur">
+    </div>
+
+    <div class="input-group">
+      <label>Affiliation</label>
+      <input type="text" id="affiliation" value="Affiliated To Tribhuvan University">
+    </div>
+
+    <div class="input-group">
+      <label>Upload Logo (Optional)</label>
+      <input type="file" id="logoInput" accept="image/*">
+    </div>
+
+    <button onclick="downloadPDF()">📄 Download PDF</button>
+
+  </div>
+
+  <!-- PREVIEW -->
+  <div id="pdf-content">
+
+    <div class="cover-page">
+
+      <div class="logo-container">
+        <img src="logo.png"
+             id="logoPreview"
+             alt="University Logo"
+             onerror="this.style.display='none'">
+      </div>
+
+      <div class="university">
+        <h1 id="previewUniversityName">Tribhuvan University</h1>
+        <h2 id="previewCollegeName">Ramsagar Ramswarup Multiple Campus</h2>
+        <p id="previewCollegeAddress">Janakpur -14, Dhanusha, Nepal</p>
+      </div>
+
+      <div class="details">
+
+        <div class="row">
+          <div class="label">Faculty</div>
+          <div class="colon">:</div>
+          <div class="value" id="previewFaculty">BSc.CSIT</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Department</div>
+          <div class="colon">:</div>
+          <div class="value" id="previewDepartment">Department of TUIOST</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Specific Department</div>
+          <div class="colon">:</div>
+          <div class="value" id="previewSpecificDepartment">
+            Computer Science and Information Technology (BSc.CSIT)
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="label">Semester</div>
+          <div class="colon">:</div>
+          <div class="value" id="previewSemester">3rd Semester</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Subject</div>
+          <div class="colon">:</div>
+          <div class="value" id="previewSubject">Numerical Method</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Student Name</div>
+          <div class="colon">:</div>
+          <div class="value" id="previewStudentName">Suman Kushwaha</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Roll Number</div>
+          <div class="colon">:</div>
+          <div class="value" id="previewRollNumber">81011622</div>
+        </div>
+
+        <div class="row">
+          <div class="label">Registration Number</div>
+          <div class="colon">:</div>
+          <div class="value" id="previewRegistrationNumber">
+            5-2-14-2705-2024
+          </div>
+        </div>
+
+      </div>
+
+      <div class="submitted">
+
+        <h2>Submitted To</h2>
+
+        <h3 id="previewSubmittedTo">
+          Ramsagar Ramswarup Multiple Campus
+        </h3>
+
+        <p id="previewCampusLocation">
+          Campus Chowk, Janakpur
+        </p>
+
+        <p id="previewAffiliation">
+          (Affiliated To Tribhuvan University)
+        </p>
+
+        <br>
+
+        <h3>Submitted By</h3>
+
+        <div class="student-name" id="previewStudentBottom">
+          SUMAN KUSHWAHA
+        </div>
+
+      </div>
+
+      <div class="signature-area">
+
+        <div class="signature-box">
+
+          <h3>SIGNATURE</h3>
+
+          <p>.......................................</p>
+
+          <p id="previewTeacherName">(Suman Kushwaha)</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="developer-footer">
+
+  <h3>Developed By Suman Kushwaha</h3>
+
+  <p>
+    Professional Cover Page Generator
+  </p>
+
+  <div class="footer-links">
+
+    <a href="https://kushwahasuman.com.np/" target="_blank">🌐 Website</a>
+    <a href="https://www.facebook.com/suman.kushwaha.867629" target="_blank">📘 Facebook</a>
+    <a href="https://github.com/Kushwaha-suman" target="_blank">💻 GitHub</a>
+    <a href="https://www.instagram.com/sumankushwaha333/" target="_blank">📸 Instagram</a>
+    <a href="https://www.linkedin.com/in/suman-kushwaha-a67609373/" target="_blank">💼 LinkedIn</a>
+
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
